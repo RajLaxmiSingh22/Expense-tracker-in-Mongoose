@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Day-to-day Expenses</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/pagination.css" />
+    <link rel="stylesheet" href="../css/message-box.css" />
+  </head>
+  <body>
+    <div id="alert-box">
+      <!-- alert will be dynamically control here -->
+    </div>
+    <div id="premiumButton">
+      <button id="buyPremium">Buy Premium Membership</button>
+    </div>
+
+    <div class="container">
+      <div class="btn-logout">
+        <button id="logout">Logout</button>
+      </div>
+
+      <h3 id="welcome">Welcome</h3>
+
+      <div id="modal-board"></div>
+      <div id="modal-table"></div>
+
+      <form
+        class="form-controller"
+        id="expenseForm"
+        method="post"
+      >
+        <div class="inputs">
+          <div class="input-controller">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" min="1" name="amount" required />
+          </div>
+          <div class="input-controller">
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+              <option value="Food">Food</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-controller">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="4"></textarea>
+          <button type="button" id="suggest-category" class="btn btn-first">✨ Suggest category</button>
+        </div>
+
+        <button type="submit" class="btn btn-submit">Submit</button>
+      </form>
+
+      <div class="expensesTable">
+        <div class="Row">
+          <h4>Expenses</h4>
+          <div class="limit-selector">
+            Rows per page:
+            <select
+              name="number-of-page"
+              id="number-of-page"
+            >
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+            </select>
+          </div>
+        </div>
+        <div class="wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="expensesTableBody">
+              <!-- Expenses will be dynamically added here -->
+            </tbody>
+          </table>
+        </div>
+        <div id="page-numbers"></div>
+      </div>
+    </div>
+
+    <!-- APIs -->
+    <script src="../js/api/User.js"></script>
+    <script src="../js/api/Cashfree.js"></script>
+    <script src="../js/api/Premium.js"></script>
+    <script src="../js/api/Download.js"></script>
+
+    <!-- DOM and API calls -->
+    <script src="../js/buyPremium.js"></script>
+    <script src="../js/messenger.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/Primiums/premiumFunctions.js"></script>
+    <script src="../js/Primiums/hestory.js"></script>
+
+    <!-- logout -->
+    <script src="../js/authorization.js"></script>
+
+    <!-- lib -->
+    <script src="../js/lib/axios.min.js"></script>
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-to-day Expenses</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/message-box.css">
+  </head>
+  <body>
+    <div id="alert-box">
+      
+    </div>
+    <div class="containers">
+      <h1 class="title">Login</h1>
+      <form method="post" id="auth-form" class="form-controller">
+        
+        <div class="input-controller">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="input-controller">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="btn btn-submit">Login</button>
+      </form>
+      <div class="centered">Forgot password, click <a href="/views/forgotPassword.html">here</a></div>
+      <div class="centered">Don't have an account? <a href="/views/singIn.html">sing in</a></div> 
+    </div>
+
+    <!-- APIs -->
+    <script src="../js/api/Auth.js"></script>
+    
+    <!-- Dom and API calls -->
+    <script src="../js/authorization.js"></script>
+    <script src="../js/messenger.js"></script>
+
+    <!-- lib -->
+    <script src="../js/lib/axios.min.js"></script>
+    
+  </body>
+</html>
